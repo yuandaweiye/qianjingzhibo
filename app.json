@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/online/online",
+    "pages/infos/infos",
+    "pages/nowInfo/nowInfo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "red",
+    "enablePullDownRefresh":"{{true}}"
+  },
+
+  "tabBar": {
+  "color": "#777",
+  "selectedColor": "#FF5205",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "utils/images/home.png",
+        "selectedIconPath": "utils/images/home_bg.png"
+      },
+      {
+        "pagePath": "pages/infos/infos",
+        "text": "行情",
+        "iconPath": "utils/images/nowinfo.png",
+        "selectedIconPath": "utils/images/nowinfo_bg.png"
+      }, 
+      {
+        "pagePath": "pages/nowInfo/nowInfo",
+        "text": "资讯",
+        "iconPath": "utils/images/info.png",
+        "selectedIconPath": "utils/images/info_bg.png"
+      },       
+      {
+        "pagePath": "pages/online/online",
+        "text": "直播",
+        "iconPath": "utils/images/online.png",
+        "selectedIconPath": "utils/images/online_bg.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "utils/images/user.png",
+        "selectedIconPath": "utils/images/user_bg.png"
+      }
+    ]
+  }
+}
