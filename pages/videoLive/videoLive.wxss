@@ -1,0 +1,147 @@
+/* pages/live/live.wxss */  
+/* 视频直播样式 */
+.video_live {
+  width: 100%;
+  overflow: hidden;
+}
+.video_live video {
+  width: 100%;
+  height: 416rpx;
+}
+.video_live .viode_live_tips {
+  color: #6B6B6B;
+  background: #FFF7D6;
+  padding: 10rpx 0;
+}
+.video_live .viode_live_tips p {
+  display: block;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  padding: 0 40rpx;
+}
+.comment {
+  padding: 20rpx 40rpx;
+  margin-bottom: 68rpx;
+}
+.comment ul li {
+  display: block;
+  margin-bottom: 20rpx;
+}
+.comment ul li dt {
+  display: inline-block;
+  width: 50rpx;
+  text-align: left;
+  vertical-align: top;
+}
+.comment ul li dt image {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+.comment ul li dd {
+  display: inline-block;
+  max-width: 500rpx;
+  font-size: 24rpx;
+}
+.comment ul li dd p.info {
+  display: block;
+  font-size:30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.comment ul li dd p.info span.name {
+  float: left;
+  color: #43261a;
+}
+.comment ul li dd p.info span.time {
+  float: right;
+  color: #A9A19E;
+}
+.comment ul li.yk dd p.message {
+  display: inline-block;
+  max-width: 80%;
+  color: #5D5D5D;
+  background: #fff;
+  line-height: 30rpx;
+  padding: 16rpx;
+  border: 02rpx solid #dcdcdc;
+  border-radius: 5rpx;
+}
+.comment ul li.yk dd span.time {
+  margin-right: 0.875rpx;
+}
+.comment ul li.yk dd .reply {
+  font-size: 24rpx;
+  color: #D54200;
+  margin-left: 10rpx;
+}
+.comment ul li.author dd image {
+  padding-left: 40rpx;
+  width: 70rpx;
+  height: 26rpx;
+}
+.comment ul li.author dd p.message {
+  display: inline-block;
+  max-width: 100%;
+  color: #7D300D;
+  line-height: 36rpx;
+  padding: 16rpx;
+  border: 2rpx solid #7d300d;
+  border-radius: 5rpx;
+  background: #FEE9E8;
+}
+.comment ul li.options_top p.message {
+  display: inline-block;
+  max-width: 100%;
+  color: #7D300D;
+  line-height: 36rpx;
+  padding: 16rpx;
+  border: 2rpx solid #7d300d;
+  border-radius: 5rpx;
+  background: #FEE9E8;
+}
+.speak {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 10rpx 10rpx 10px 20rpx;
+  background: #F3F4F6;
+  display: flex;
+  justify-content: space-between;
+}
+.speak textarea {
+  width: 420rpx;
+  height: 60rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  padding: 0 30rpx;
+  resize: none;
+  -webkit-border-radius: 30rpx;
+  -moz-border-radius: 30rpx;
+  border-radius: 30rpx;
+  background: #fff;
+}
+.speak .brow {
+  width: 66rpx;
+  height: 66rpx;
+  background-position: center center;
+}
+.speak button {
+  width: 110rpx;
+  height: 60rpx;
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background: #FF5205;
+  -webkit-border-radius: 10rpx;
+  -moz-border-radius: 10rpx;
+  border-radius: 10rpx;
+  cursor: pointer;
+}

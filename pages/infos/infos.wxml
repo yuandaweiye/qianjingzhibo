@@ -1,4 +1,42 @@
 <!--pages/infos/infos.wxml-->
-<view>
-    我是行情页
+<!--pages/infos/infos.wxml-->
+<view class="infos">
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">上海期货交易所</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">郑州商品交易所</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">大连商品交易所</view>  
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">金融期货交易所</view>  
+</view>  
+  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
+    <!-- 我是哈哈 -->  
+    <swiper-item>  
+      <view class="item_ul">
+           <dl class="market_list">
+                <dt class="fl border-l-green">
+                    <span class="stockName">棉花</span>
+                    <span class="stockCode">CF801</span>
+                </dt>
+                <dd class="fr">
+                    <span class="stockPrice">3.95</span>
+                    <span class="stockRose green">-0.027(-0.75%)</span>
+                </dd>
+            </dl>
+      </view>  
+    </swiper-item>  
+    <!-- 我是呵呵 -->  
+    <swiper-item>  
+      <view>我是呵呵</view>  
+    </swiper-item>  
+    <!-- 我是嘿嘿 -->  
+    <swiper-item>  
+      <view>我是嘿嘿</view>  
+    </swiper-item>  
+
+    <swiper-item>  
+      <view>我是海贼王</view>  
+    </swiper-item>  
+</swiper>  
+
 </view>
+

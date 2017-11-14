@@ -1,0 +1,59 @@
+<!--视频直播页面.wxml-->
+<view class='container'>
+  <view class='main'>
+      <view class='video_live'>
+       <video  poster="../../utils/images/video_live.png" ></video>
+       <view class="viode_live_tips">
+           <p>管理员：分析师发表的言论均代表其个人对于投资环境的市场观点，仅供参考。</p>
+           <p class="text-center">  投资有风险，入市需谨慎！</p>
+       </view>
+      </view>
+      <!-- 评论留言 -->
+      <view class="comment">
+            <ul>
+                <li class="yk">
+                    <dl>
+                        <dt><a href="javascript:void (0)"><image src="../../utils/images/yk_header.png" alt=""></image></a></dt>
+                        <dd>
+                            <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
+                            <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="author">
+                    <dl>
+                        <dt><a href="javascript:void (0)"><image src="../../utils/images/live_header.png" alt=""></image></a></dt>
+                        <dd>
+                            <p class="clear info"><span class="name author">刘老师</span><image src='../../utils/images/author_bg.png'></image><span class="time">09:12</span></p>
+                            <p class="message"><span>@游客12560257：</span>目前处于震荡整理的阶段，可关注上方9.5的压力位。</p>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="yk">
+                    <dl>
+                        <dt><a href="javascript:void (0)"><image src="../../utils/images/yk_header.png" alt=""></image></a></dt>
+                        <dd>
+                            <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
+                            <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="yk">
+                    <dl>
+                        <dt><a href="javascript:void (0)"><image src="../../utils/images/yk_header.png" alt=""></image></a></dt>
+                        <dd>
+                            <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
+                            <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+      </view>
+      <!-- 评论输入框 -->
+      <view class="speak">
+        <textarea name="mess" id="mess" ></textarea>
+        <image class='brow' src='../../utils/images/brow.png'></image>
+        <button>发送</button>
+      </view>
+  </view>
+</view>

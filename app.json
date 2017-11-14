@@ -4,19 +4,26 @@
     "pages/logs/logs",
     "pages/online/online",
     "pages/infos/infos",
-    "pages/nowInfo/nowInfo"
+    "pages/nowInfo/nowInfo",
+    "pages/videoLive/videoLive",
+    "pages/textLive/textLive",
+    "pages/diurnal/diurnal",
+    "pages/news/news",
+    "pages/newsContent/newsContent",
+    "pages/login/login",
+    "pages/alterPass/alterPass",
+    "pages/alterName/alterName"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "red",
-    "enablePullDownRefresh":"{{true}}"
+    "enablePullDownRefresh": "{{true}}"
   },
-
   "tabBar": {
-  "color": "#777",
-  "selectedColor": "#FF5205",
+    "color": "#777",
+    "selectedColor": "#FF5205",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -29,13 +36,13 @@
         "text": "行情",
         "iconPath": "utils/images/nowinfo.png",
         "selectedIconPath": "utils/images/nowinfo_bg.png"
-      }, 
+      },
       {
         "pagePath": "pages/nowInfo/nowInfo",
         "text": "资讯",
         "iconPath": "utils/images/info.png",
         "selectedIconPath": "utils/images/info_bg.png"
-      },       
+      },
       {
         "pagePath": "pages/online/online",
         "text": "直播",

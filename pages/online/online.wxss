@@ -1,1 +1,28 @@
 /* pages/online/online.wxss */
+ /* 直播列表 */
+  .live_list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .live_list dl{
+      width:280rpx;
+      text-align: center
+  }
+  .live_list dl dt{
+    display: block;
+    width:280rpx;
+    height: 224rpx;
+  }
+  .live_list dl dt image{
+    width: 100%;
+    height: 100%;
+  }
+  .live_list dl dd{
+    display: block;
+    padding: 10rpx 0;
+  }
+  .live_list dl dd span{
+    color: #7C7C7C;
+  }

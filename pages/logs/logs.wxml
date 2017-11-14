@@ -1,4 +1,39 @@
-<!--logs.wxml-->
-<view>
-  用户信息页
+<!--用户界面-->
+<view class="main">
+    <view class="warp user">
+      <navigator url='../login/login'>
+        <view class="list">
+            <view class="left">
+                <image src="../../utils/images/username.png"></image>
+                <text>账号登录</text>
+            </view>
+            <view class="right">
+                <image src="../../utils/images/jt.png"></image>
+            </view>  
+        </view>
+      </navigator>    
+      <navigator url='../alterPass/alterPass'>
+        <view class="list">
+            <view class="left">
+                <image src="../../utils/images/pass.png"></image>
+                <text>修改密码</text>
+            </view>
+            <view class="right">
+                <image src="../../utils/images/jt.png"></image>
+            </view>  
+        </view>
+      </navigator>   
+      <navigator url='../alterName/alterName'>
+        <view class="list">
+            <view class="left">
+                <image src="../../utils/images/alter.png"></image>
+                <text>修改昵称</text>
+            </view>
+            <view class="right">
+                <image src="../../utils/images/jt.png"></image>
+            </view>  
+        </view>
+      </navigator>   
+    </view>
 </view>
+

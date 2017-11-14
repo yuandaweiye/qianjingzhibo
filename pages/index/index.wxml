@@ -1,5 +1,72 @@
 <!--index.wxml-->
-<view class="index">
+<view class="container">
+  <!--banner图  -->
+  <view class='banner'>
+        <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{bannerUrls}}">
+          <swiper-item>
+            <image src="{{item.image_url}}" class="slide-image" width="355" height="150"/>
+          </swiper-item>
+        </block>
+      </swiper>
+  </view>
 
 
+  <!--主题内容  -->
+  <view class='main'>
+    <view class="warp">
+        <view class="warp_title ">
+            直播大厅
+            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+        </view>
+        <view class="warp_content ">
+            <view class='live_list'>
+              <dl wx:for="{{DirectseedingHall}}">
+                  <dt><a href="javascript:void(0)"><image src="{{item.pic}}" alt="直播"/></a></dt>
+                  <dd><a href="javascript:void(0)"><span>"{{item.title}}"</span></a></dd>
+              </dl>
+            </view>
+        </view>
+    </view>
+
+        <!-- 新闻资讯-->
+    <view class="warp">
+        <view class="warp_title ">
+            新闻资讯
+            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+        </view>
+        <view class="warp_content">
+            <ul class="news_list">
+                <li  wx:for="{{newsList}}" bindtap="tapItem" data-news-id="{{item.id}}"><a href="javascript:void(0)"><span class="fl list_wz">{{item.title}}</span></a><span class="fr list_time">{{item.create_time}}</span></li>
+            </ul>
+        </view>
+    </view>
+
+        <!-- 行情中心-->
+    <view class="warp">
+        <view class="warp_title ">
+            行情中心
+            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+        </view>
+        <view class="warp_content">
+          
+            <dl wx:for="{{quotation}}" class="market_list">
+                <!-- <dt  class={{ {{item.change_percent}} > 0 ? "fl border-l-green":"fl border-l-red" }}> -->
+                <dt  class="{{item.change_percent<0 ? 'fl border-l-green' : 'fl border-l-red'}}">
+                    <span class="stockName">{{item.name}}</span>
+                    <span class="stockCode">{{item.symbol}}</span>
+                </dt>
+                <dd class="fr">
+                    <span class="stockPrice">{{item.trade}}</span>
+                    <span class="{{item.change_percent<0 ? 'stockRose green' : 'stockRose red'}}">{{item.change}}({{item.change_percent}}%)</span>
+                </dd>
+            </dl>
+       
+
+
+           
+        </view>
+    </view>
+  </view>
 </view>

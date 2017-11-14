@@ -1,8 +1,26 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.main view.user{
+  padding: 0;
 }
-.log-item {
-  margin: 10rpx;
+.user .list{
+  padding: 30rpx 40rpx;
+  font-size: 30rpx;
+  color: #3C3C3C;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #C9C9C9
+}
+.user .list .left image{
+  width: 40rpx;
+  height: 46rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.user .list .left text{
+  vertical-align: middle;
+}
+
+.user .list .right image{
+  width: 26rpx;
+  height: 46rpx;
+  vertical-align: middle;
 }

@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    URL: "http://42.121.131.12:6363", 
   }
 })
