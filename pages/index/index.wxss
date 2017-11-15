@@ -1,0 +1,98 @@
+/**index.wxss**/
+.banner{
+  font-size: 0;
+}
+.banner image{
+  width: 750rpx;
+  height: 320rpx
+}
+  /* 直播列表 */
+  .live_list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .live_list dl{
+      width:280rpx;
+      text-align: center
+  }
+  .live_list dl dt{
+    display: block;
+    width:280rpx;
+    height: 224rpx;
+  }
+  .live_list dl dt image{
+    width: 100%;
+    height: 100%;
+  }
+  .live_list dl dd{
+    display: block;
+    padding: 10rpx 0;
+  }
+  .live_list dl dd span{
+    color: #7C7C7C;
+  }
+
+  /*新闻咨询  */
+  .news_list li {
+  padding: 10rpx 0;
+}
+.news_list li span.list_wz {
+  display: inline-block;
+   width: 70%; 
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-right: 5%;
+}
+.news_list li span.list_time {
+  display: inline-block;
+   width: 25%; 
+  text-align: right;
+  color: #989898;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/*行情中心  */
+.market_list {
+  padding: 18rpx 0;
+  border-bottom: 2rpx solid #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+}
+.market_list dt {
+  text-align: left;
+  padding-left:20rpx; 
+}
+.market_list dd {
+  text-align: right;
+}
+ .market_list dt.border-l-green {
+  border-left: 5rpx solid #67a544;
+}
+.market_list dt.border-l-red {
+  border-left: 5rpx solid #eb3d13;
+}
+ .market_list span {
+  display: block;
+}
+ .market_list span.stockName,.market_list span.stockPrice {
+  color: #000;
+  font-weight: 600;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+.market_list span.stockCode {
+  line-height: 30rpx;
+  color: #949597;
+}
+ .market_list span.stockRose {
+  line-height: 30rpx;
+}
+ .market_list span.green {
+  color: #67A544 ;
+}
+.market_list span.red {
+  color: #EB3D13;
+}

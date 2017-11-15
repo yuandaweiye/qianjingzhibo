@@ -1,0 +1,13 @@
+
+<import src="../../utils/lib/wxParse.wxml"/>
+<view class="main">
+      <view class="warp news_article">
+         <view class="news_title">
+            <text>{{article_title}}</text>
+             <p><span class="author">{{article_author}}</span><span class="time">{{create_time}}</span></p> 
+        </view>
+        <view class="warp_content news_content">
+            <template  is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
+        </view> 
+    </view>
+</view>

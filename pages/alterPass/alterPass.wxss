@@ -1,0 +1,55 @@
+/*登录页面样式 */
+.main .userjm{
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+.main .userjm form{
+  display: block;
+  margin: 0 auto;
+  width: 460rpx;
+  height: auto;
+  font-size: 18rpx;
+  padding-bottom: 150rpx;
+}
+.main .userjm form .list{
+  display: block;
+  padding-top: 40rpx;
+  font-size: 24rpx;
+  color: #9D9D9D;
+}
+.main .userjm form .input{
+  display: block;
+  border-bottom: 1px solid #DDDDDD;
+}
+.main .userjm form .input text{
+  margin-right: 10rpx;
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 600;
+}
+.main .userjm form input{
+  display:inline-block; 
+}
+.main .userjm form checkbox .wx-checkbox-input{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 20rpx;
+}
+.main .userjm form input,.main .userjm form image,.main .userjm form text{
+  vertical-align: middle;
+}
+.main .userjm form .tisp{
+  font-size: 20rpx;
+}
+.main .userjm form button{
+  width: 100%;
+  background: #FFAF32;
+  color: #fff;
+  font-weight: 600;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: normal;
+  padding: 10rpx 0;
+  margin:0;
+}

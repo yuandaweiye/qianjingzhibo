@@ -1,0 +1,2 @@
+<!--pages/nowinfo/.wxml-->
+<text>{{page}}.wxml</text>
