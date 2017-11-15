@@ -80,7 +80,6 @@ Page({
     })
   },
   tapItem: function (event){
-    console.log(event.currentTarget.dataset.newsId);
     wx.navigateTo({
       url: "../newsContent/newsContent?article_id=" + event.currentTarget.dataset.newsId,
     })
@@ -111,16 +110,12 @@ Page({
     //获获取首页行情中心/api/get_index_market
 
     postRequest("/api/get_index_market").then(res => {
-      // console.log(res.data.result)
       var newquotation = [];
-      // this.setData({ quotation: res.data.result });
       res.data.result.map((value) => {
         value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : "-" + (value.change_percent * 100).toFixed(2);
         value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : "-" + value.change;
         newquotation.push(value)
       });
-
-      console.log(newquotation)
       this.setData({ quotation: newquotation })
     }).catch(err => { console.log(err) });
 
