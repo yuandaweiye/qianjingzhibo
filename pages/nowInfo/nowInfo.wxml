@@ -6,14 +6,50 @@
       <view class="warp_title">日刊
          <navigator url='../diurnal/diurnal'><span class="more">查看更多</span></navigator>
       </view>
-        <view class="warp_content" >
-            <dl class="newsZx_list" wx:for="{{journal}}" data-news-id="{{item.id}}" bindtap="tapItem">
+        <view class="warp_content">
+            <dl class="newsZx_list">
                 <dt>
-                    <navigator url='../newsContent/newsContent'><image src="{{item.image_url}}" alt="图片加载中"></image></navigator>
+                    <navigator url='../newsContent/newsContent'><image src="../../utils/images/news_rk.png" alt=""></image></navigator>
                 </dt>
                 <dd>
-                    <p class="newZx_title"><a href="javascript:void(0)">{{item.title}}</a></p>
-                    <p class="newZx_time">{{item.create_time}}</p>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
                 </dd>
             </dl>
         </view>
@@ -25,18 +61,51 @@
         <navigator url='../news/news'><span class="more">查看更多</span></navigator>
       </view>
         <view class="warp_content">
-            <dl class="newsZx_list" wx:for="{{news}}"  data-news-id="{{item.id}}"   bindtap="tapItem">
+            <dl class="newsZx_list">
                 <dt>
-                    <a href="javascript:void(0)"><image src="{{item.image_url}}" alt="图片加载中"></image></a>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_news.png" alt=""></image></a>
                 </dt>
                 <dd>
-                    <p class="newZx_title"><a href="javascript:void(0)">{{item.title}}</a></p>
-                    <p class="newZx_time">{{item.create_time}}</p>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
                 </dd>
             </dl>
-
-
-
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
+            <dl class="newsZx_list">
+                <dt>
+                    <a href="javascript:void(0)"><image src="../../utils/images/news_rk.png" alt=""></image></a>
+                </dt>
+                <dd>
+                    <p class="newZx_title"><a href="javascript:void(0)">券商股拉升难救主 沪指失守20日线</a></p>
+                    <p class="newZx_time">2017-11-02  16:00</p>
+                </dd>
+            </dl>
         </view>
     </view>
 </view>

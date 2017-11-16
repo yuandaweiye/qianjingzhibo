@@ -1,33 +1,52 @@
-import { postRequest } from '../../utils/util.js';
 Page({
   data: {
-    journal:[],
-    news:[]
+    /** 
+        * 页面配置 
+        */
+    winWidth: 0,
+    winHeight: 0,
+    // tab切换  
+    currentTab: 0,
   },
   onLoad: function () {
-    // 获取日刊/api/get_articles
-    const urls = "/api/get_articles";
-    const journal_type = { type: 1, page: 1, per_page: 10 };
-    const news_type = { type: 2, page: 1, per_page: 10 };
-    postRequest(urls, journal_type ).then(res=>{
-      console.log(res)
-      this.setData({
-        journal:res.data.data
-      })
-    });
-    postRequest(urls, news_type).then(res => {
-      console.log(res)
-      this.setData({
-        news: res.data.data
-      })
-      console.log(this.data.news)
-    });
-  },
+    var that = this;
 
-   tapItem: function (event) {
-     console.log(event.currentTarget.dataset);
-    wx.navigateTo({
-      url: "../newsContent/newsContent?article_id=" + event.currentTarget.dataset.newsId,
-    })
+    /** 
+     * 获取系统信息 
+     */
+    wx.getSystemInfo({
+
+      success: function (res) {
+        that.setData({
+          winWidth: res.windowWidth,
+          winHeight: res.windowHeight
+        });
+      }
+
+    });
   },
+  /** 
+     * 滑动切换tab 
+     */
+  bindChange: function (e) {
+
+    var that = this;
+    that.setData({ currentTab: e.detail.current });
+
+  },
+  /** 
+   * 点击tab切换 
+   */
+  swichNav: function (e) {
+
+    var that = this;
+
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
+  }
 })  

@@ -9,69 +9,32 @@
 </view>  
   
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">  
-    <!-- 上海期货交易所 -->  
+    <!-- 我是哈哈 -->  
     <swiper-item>  
       <view class="item_ul">
-             <dl wx:for="{{data_01}}" class="market_list">
-                <!-- <dt  class={{ {{item.change_percent}} > 0 ? "fl border-l-green":"fl border-l-red" }}> -->
-                <dt  class="{{item.change_percent<0 ? 'fl border-l-green' : 'fl border-l-red'}}">
-                    <span class="stockName">{{item.name}}</span>
-                    <span class="stockCode">{{item.symbol}}</span>
+           <dl class="market_list">
+                <dt class="fl border-l-green">
+                    <span class="stockName">棉花</span>
+                    <span class="stockCode">CF801</span>
                 </dt>
                 <dd class="fr">
-                    <span class="stockPrice">{{item.trade}}</span>
-                    <span class="{{item.change_percent<0 ? 'stockRose green' : 'stockRose red'}}">{{item.change}}({{item.change_percent}}%)</span>
+                    <span class="stockPrice">3.95</span>
+                    <span class="stockRose green">-0.027(-0.75%)</span>
                 </dd>
             </dl>
       </view>  
     </swiper-item>  
-    <!-- 郑州商品交易所 -->  
+    <!-- 我是呵呵 -->  
     <swiper-item>  
-      <view class="item_ul">
-             <dl wx:for="{{data_02}}" class="market_list">
-                <!-- <dt  class={{ {{item.change_percent}} > 0 ? "fl border-l-green":"fl border-l-red" }}> -->
-                <dt  class="{{item.change_percent<0 ? 'fl border-l-green' : 'fl border-l-red'}}">
-                    <span class="stockName">{{item.name}}</span>
-                    <span class="stockCode">{{item.symbol}}</span>
-                </dt>
-                <dd class="fr">
-                    <span class="stockPrice">{{item.trade}}</span>
-                    <span class="{{item.change_percent<0 ? 'stockRose green' : 'stockRose red'}}">{{item.change}}({{item.change_percent}}%)</span>
-                </dd>
-            </dl>
-      </view>  
+      <view>我是呵呵</view>  
     </swiper-item>  
-    <!-- 大连商品交易所 -->  
+    <!-- 我是嘿嘿 -->  
     <swiper-item>  
-     <view class="item_ul">
-             <dl wx:for="{{data_03}}" class="market_list">
-                <!-- <dt  class={{ {{item.change_percent}} > 0 ? "fl border-l-green":"fl border-l-red" }}> -->
-                <dt  class="{{item.change_percent<0 ? 'fl border-l-green' : 'fl border-l-red'}}">
-                    <span class="stockName">{{item.name}}</span>
-                    <span class="stockCode">{{item.symbol}}</span>
-                </dt>
-                <dd class="fr">
-                    <span class="stockPrice">{{item.trade}}</span>
-                    <span class="{{item.change_percent<0 ? 'stockRose green' : 'stockRose red'}}">{{item.change}}({{item.change_percent}}%)</span>
-                </dd>
-            </dl>
-      </view> 
+      <view>我是嘿嘿</view>  
     </swiper-item>  
- <!-- 中国金融期货交易所 -->  
+
     <swiper-item>  
-      <view class="item_ul">
-             <dl wx:for="{{data_04}}" class="market_list">
-                <!-- <dt  class={{ {{item.change_percent}} > 0 ? "fl border-l-green":"fl border-l-red" }}> -->
-                <dt  class="{{item.change_percent<0 ? 'fl border-l-green' : 'fl border-l-red'}}">
-                    <span class="stockName">{{item.name}}</span>
-                    <span class="stockCode">{{item.symbol}}</span>
-                </dt>
-                <dd class="fr">
-                    <span class="stockPrice">{{item.trade}}</span>
-                    <span class="{{item.change_percent<0 ? 'stockRose green' : 'stockRose red'}}">{{item.change}}({{item.change_percent}}%)</span>
-                </dd>
-            </dl>
-      </view>
+      <view>我是海贼王</view>  
     </swiper-item>  
 </swiper>  
 

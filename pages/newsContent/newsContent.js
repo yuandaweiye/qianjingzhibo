@@ -1,39 +1,18 @@
 // pages/newsContent/newsContent.js
-import { postRequest } from '../../utils/util.js';
-import  WxParse  from '../../utils/lib/wxParse.js';
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      article_title:"",
-      article_content:"",
-      create_time:"",
-      contents:"",
-      article_author:""
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取新闻资讯
-    const article_id = options.article_id;
-    postRequest("/api/get_article_detail", { id: article_id}).then((res)=>{
-      // var nowarticle = res.data.data;
-      // nowarticle = wxParse('article_content', 'html', res.data.data.content,this)
-      // console.log(nowarticle);
-      console.log(res);
-      this.setData({
-        article_title: res.data.data.title,
-        conntent: WxParse.wxParse('article_content','html',res.data.data.content,this,5),
-        create_time: res.data.data.create_time,
-        article_author: res.data.data.author
-      })
-      console.log(this.data.article_content);
-    })
+  
   },
 
   /**
