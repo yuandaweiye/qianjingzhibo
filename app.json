@@ -32,10 +32,10 @@
         "selectedIconPath": "utils/images/home_bg.png"
       },
       {
-        "pagePath": "pages/infos/infos",
-        "text": "行情",
-        "iconPath": "utils/images/nowinfo.png",
-        "selectedIconPath": "utils/images/nowinfo_bg.png"
+        "pagePath": "pages/online/online",
+        "text": "直播",
+        "iconPath": "utils/images/online.png",
+        "selectedIconPath": "utils/images/online_bg.png"
       },
       {
         "pagePath": "pages/nowInfo/nowInfo",
@@ -44,10 +44,10 @@
         "selectedIconPath": "utils/images/info_bg.png"
       },
       {
-        "pagePath": "pages/online/online",
-        "text": "直播",
-        "iconPath": "utils/images/online.png",
-        "selectedIconPath": "utils/images/online_bg.png"
+        "pagePath": "pages/infos/infos",
+        "text": "行情",
+        "iconPath": "utils/images/nowinfo.png",
+        "selectedIconPath": "utils/images/nowinfo_bg.png"
       },
       {
         "pagePath": "pages/logs/logs",
