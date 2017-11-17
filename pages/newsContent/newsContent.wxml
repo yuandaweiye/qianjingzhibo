@@ -1,14 +1,13 @@
+
+<import src="../../utils/lib/wxParse.wxml"/>
 <view class="main">
       <view class="warp news_article">
-        <view class="news_title">
-            <text>券商股拉升难救主 沪指失守20日线</text>
-            <p><span class="author">中国证券网</span><span class="time">2017-11-02</span></p>
+         <view class="news_title">
+            <text>{{article_title}}</text>
+             <p><span class="author">{{article_author}}</span><span class="time">{{create_time}}</span></p> 
         </view>
         <view class="warp_content news_content">
-            <p>周四，沪深两市全天震荡下跌，沪指接连失守10日、20日均线。截至收盘，上证指数报3383.31点，下跌0.37%；深证成指报11292.42点，下跌0.51%；创业板指报1847.57点，下跌1.34%。</p>
-            <p>盘面上，券商板块逆势拉升，方正证券上涨5.33%，财通证券上涨2.03%。煤炭板块表现强势，金瑞矿业上涨7.25%。医疗器械板块升温，大博医疗涨停。</p>
-            <p>跌幅方面，特斯拉概念大幅领跌，旭升股份、天汽模跌停。上海自贸区板块回落，上海临港跌停。高铁板块调整，飞鹿股份下跌9.05%。稀土永磁、苹果产业链均跌幅靠前。</p>
-            <p>银河证券认为，当前市场资金谨慎态度加剧，多数资金处于观望中，所以市场成交量整体缩小。展望后市，市场经过短暂下挫后，获利盘的压力得到一定程度释放，但股指短期调整尚未结束，沪指震荡反复的局面或将延续。成交量依然是影响市场走势的重要指标，投资者应密切关注量能变化。</p>
-        </view>
+            <template  is="wxParse" data="{{wxParseData:article_content.nodes}}"/>
+        </view> 
     </view>
 </view>

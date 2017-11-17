@@ -1,1 +1,6 @@
-{}
+{
+  "navigationBarTitleText": "日刊",
+  "navigationBarBackgroundColor": "#FF5205",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh":true
+}

@@ -18,7 +18,7 @@
     <view class="warp">
         <view class="warp_title ">
             直播大厅
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+            <span class="more fr" bindtap="moreOnline">查看更多</span>
         </view>
         <view class="warp_content ">
             <view class='live_list'>
@@ -34,7 +34,7 @@
     <view class="warp">
         <view class="warp_title ">
             新闻资讯
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+         <span class="more fr" bindtap="moreNews">查看更多</span>
         </view>
         <view class="warp_content">
             <ul class="news_list">
@@ -47,7 +47,7 @@
     <view class="warp">
         <view class="warp_title ">
             行情中心
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+            <span class="more fr" bindtap="moreCenter">查看更多</span>
         </view>
         <view class="warp_content">
           

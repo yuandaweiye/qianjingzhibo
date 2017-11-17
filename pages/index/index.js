@@ -57,8 +57,8 @@ Page({
           var newquotation=[];
           // this.setData({ quotation: res.data.result });
           res.data.result.map((value)=>{
-            value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : "-" + (value.change_percent * 100).toFixed(2);
-            value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : "-" + value.change;
+            value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) :  (value.change_percent * 100).toFixed(2);
+            value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : value.change;
             newquotation.push(value)
           });
 
@@ -69,15 +69,57 @@ Page({
 
   },
 
-
+  moreNews:function(){
+    wx.switchTab({
+      url:"../nowInfo/nowInfo"
+    })
+  },
+  moreCenter:function(){
+    wx.switchTab({
+      url: "../infos/infos"
+    })
+  },
   tapItem: function (event){
-    console.log(event.currentTarget.dataset.newsId);
     wx.navigateTo({
       url: "../newsContent/newsContent?article_id=" + event.currentTarget.dataset.newsId,
     })
   },
-
-
+  moreOnline:function(){
+    wx.switchTab({
+      url: "../online/online"
+    })
+  },
   getUserInfo: function(e) {
-  }
+  },
+  onPullDownRefresh: function () {
+    postRequest("/api/get_banners").
+      then(res => {
+        this.setData({ bannerUrls: res.data.data })
+      }).
+      catch(err => { alert(err) });
+
+    // 直播大厅的接口
+    postRequest("/api/get_index_studios").then(res => {
+      this.setData({ DirectseedingHall: res.data.data });
+    }).catch(err => { console.log(err) });
+
+    //获取新闻资讯接口 
+    postRequest("/api/get_articles").then(res => {
+      this.setData({ newsList: res.data.data });
+    }).catch(err => { console.log(err) });
+    //获获取首页行情中心/api/get_index_market
+
+    postRequest("/api/get_index_market").then(res => {
+      var newquotation = [];
+      res.data.result.map((value) => {
+        value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : "-" + (value.change_percent * 100).toFixed(2);
+        value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : "-" + value.change;
+        newquotation.push(value)
+      });
+      this.setData({ quotation: newquotation })
+    }).catch(err => { console.log(err) });
+
+
+  },
+
 })
