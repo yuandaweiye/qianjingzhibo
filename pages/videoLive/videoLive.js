@@ -1,18 +1,26 @@
 // pages/live/live.js
+import { postRequest } from '../../utils/util.js';
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+      videoData:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    const video_id = options.video_id;
+    console.log(options);
+   
+    postRequest("/api/get_studio_detail", { studio_id: video_id}).then(res=>{
+      this.setData({ videoData: res.data.data})
+      console.log(this.data.videoData)
+    })
   },
 
   /**

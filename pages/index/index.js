@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-import { postRequest } from '../../utils/util.js'
+import { postRequest } from '../../utils/util.js';
 Page({
   data: {
     // motto: 'Hello World',

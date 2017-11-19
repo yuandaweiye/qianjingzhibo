@@ -2,9 +2,9 @@
 <view class='container'>
   <view class='main'>
       <view class='video_live'>
-       <video  poster="../../utils/images/video_live.png" ></video>
+       <video  src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" autoplay="true" poster="../../utils/images/video_live.png" ></video>
        <view class="viode_live_tips">
-           <p>管理员：分析师发表的言论均代表其个人对于投资环境的市场观点，仅供参考。</p>
+           <p>管理员：{{videoData.introduction}}</p>
            <p class="text-center">  投资有风险，入市需谨慎！</p>
        </view>
       </view>

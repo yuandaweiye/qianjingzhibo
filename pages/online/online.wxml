@@ -4,21 +4,13 @@
   <view class="warp">
         <view class="warp_title">
             视频直播
-            <a href="javascript:void(0)"><span class="more">查看更多</span></a>
+            <a href="javascript:void(0)"><span class="more"></span></a>
         </view>
         <view class="warp_content">
           <view class='live_list'>
-            <dl>
-                <dt><navigator url="../videoLive/videoLive"><image src="../../utils/images/live.png" alt="直播"></image></navigator></dt>
-                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>刘老师</span></a></dd>
-            </dl>
-            <dl>
-                <dt><a href="javascript:void(0)"><image src="../../utils/images/live.png" alt="直播"></image></a></dt>
-                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>刘老师</span></a></dd>
-            </dl>
-             <dl>
-                <dt><a href="javascript:void(0)"><image src="../../utils/images/live.png" alt="直播"></image></a></dt>
-                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>刘老师</span></a></dd>
+            <dl wx:for="{{Livevideo}}" data-video-id="{{item.id}}" bindtap="toVideo">
+                <dt><image src="{{item.pic}}" alt="直播"></image></dt>
+                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>{{item.def_name}}</span></a></dd>
             </dl>
           </view>
         </view>
@@ -27,17 +19,13 @@
     <view class="warp">
         <view class="warp_title">
             文字直播
-            <a href="javascript:void(0)"><span class="more">查看更多</span></a>
+            <a href="javascript:void(0)"><span class="more"></span></a>
         </view>
         <view class="warp_content clear">
           <view class='live_list'>
-            <dl>
-                <dt><navigator url="../textLive/textLive"><image src="../../utils/images/live_wz.png" alt="直播"></image></navigator></dt>
-                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>刘老师</span></a></dd>
-            </dl>
-            <dl>
-                <dt><a href="javascript:void(0)"><image src="../../utils/images/live_wz.png" alt="直播"></image></a></dt>
-                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>刘老师</span></a></dd>
+            <dl  wx:for="{{Textbroadcast}}" data-text-id="{{item.id}}">
+                <dt><image src="{{item.pic}}" alt="直播"></image></dt>
+                <dd><a href="javascript:void(0)"><span>直播老师：</span><span>{{item.def_name}}</span></a></dd>
             </dl>
           </view>  
         </view>
