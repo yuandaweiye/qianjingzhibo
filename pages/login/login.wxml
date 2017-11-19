@@ -5,21 +5,21 @@
     <form>
       <view class='input list'>
         <image src='../../utils/images/username.png'> </image>
-        <input type='text' placeholder='请输入用户名'/>
+        <input type='text' placeholder='请输入用户名' name='useruser_name' bindinput='listenerUsername' />
       </view>
       <view class='input list'>
         <image src='../../utils/images/pass.png'> </image>
-        <input type='password' placeholder='请输入登录密码'/>
+        <input type='password' placeholder='请输入登录密码' bindinput='listenerPassword' password='true'/>
       </view>
       <view class='list'>
         <checkbox value='' checked='true'/>
         <text>记住账号</text>
       </view>
       <view class='list'>
-          <button>立即登录</button>
+          <button bindtap='listenerLogin'>立即登录</button>
       </view>
       <view class='list'>
-          <button>取消</button>
+          <button bindtap='listenerCancel'>取消</button>
       </view>
     
     </form>

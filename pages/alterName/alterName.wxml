@@ -5,13 +5,13 @@
     <form>
       <view class='input list'>
         <text>昵称</text>
-        <input type='text' placeholder='游客 125478'/>
+        <input type='text' placeholder='游客 125478' bindinput='listenernick_name'/>
       </view>
       <view class='list'>
         <text class='tisp'>4-20个字符，支持中英文、数字</text>
       </view>
       <view class='list'>
-          <button>确认修改</button>
+          <button bindtap='listenerConfirm'>确认修改</button>
       </view>
       <view class='list'>
           <button>取消</button>

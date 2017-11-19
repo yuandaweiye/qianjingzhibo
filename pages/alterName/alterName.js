@@ -1,13 +1,48 @@
 // pages/alterName/alterName.js
+const app = getApp()
+import { postRequest } from '../../utils/util.js';
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    nick_name:''
   },
-
+  /**
+ * 监听昵称的输入
+ */
+  listenernick_name: function (e) {
+    this.data.nick_name = e.detail.value;
+  },
+  /**
+* 监听确认修改按钮
+*/
+  listenerConfirm: function () {
+    var that = this
+    wx.getStorage({
+      key: 'member_id',
+      success: function (res) {
+        that.setData({
+          member_id: res.data
+        })
+        var data = {
+          member_id: res.data,
+          nick_name: that.data.nick_name
+        }
+        console.log(data)
+        postRequest("/api/edit_nick_name", data).
+          then(res => {          
+            if (res.data.error_code == 0){
+              wx.switchTab({
+                url: '../logs/logs',
+              })
+            }
+          }).
+          catch(err => { alert(err) });
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
