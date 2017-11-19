@@ -19,7 +19,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "red",
-    "enablePullDownRefresh": "{{true}}"
+    "enablePullDownRefresh":true
   },
   "tabBar": {
     "color": "#777",

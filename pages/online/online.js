@@ -1,18 +1,27 @@
 // pages/online/online.js
+import { postRequest } from '../../utils/util.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    Livevideo:[],
+    Textbroadcast:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    const urls ='/api/get_studios';
+    postRequest(urls,{type:1}).then(res=>{
+      this.setData({Livevideo:res.data.data});
+    })
+    postRequest(urls,{type:2}).then(res=>{
+      this.setData({ Textbroadcast: res.data.data });
+      console.log(this.data.Textbroadcast);
+    })
   },
 
   /**
@@ -62,5 +71,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toVideo:function(event){
+    wx.navigateTo({
+      url: "../videoLive/videoLive?video_id=" + event.currentTarget.dataset.videoId,
+    })
   }
 })
