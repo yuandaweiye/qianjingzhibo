@@ -56,8 +56,21 @@ Page({
         postRequest("/api/editpwd", data).
           then(res => {
             if (res.data.error_code == 0) {
-              wx.switchTab({
-                url: '../logs/logs',
+              wx.showToast({
+                title: '密码修改成功',
+                icon: 'success',
+                duration: 1800,
+                success: function (res) {
+                  wx.switchTab({
+                    url: '../logs/logs',
+                  })
+                }
+              })
+            }else{
+              wx.showToast({
+                title: '密码修改失败',
+                icon: 'loading',
+                duration: 1200
               })
             }
           }).

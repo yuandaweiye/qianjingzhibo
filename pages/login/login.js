@@ -45,8 +45,21 @@ Page({
                   key: 'member_id',
                   data: res.data.data.member_id,
                 })
-                wx.switchTab({
-                  url: '../logs/logs',
+                wx.showToast({
+                  title: '登陆成功',
+                  icon: 'success',
+                  duration: 1200,
+                  success: function (res) {
+                    wx.switchTab({
+                      url: '../logs/logs',
+                    })
+                  }
+                })
+              }else{
+                wx.showToast({
+                  title: '账号或密码错误请重新登录',
+                  icon: 'loading',
+                  duration: 1800
                 })
               }
             }).

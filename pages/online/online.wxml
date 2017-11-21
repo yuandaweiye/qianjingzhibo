@@ -23,7 +23,7 @@
         </view>
         <view class="warp_content clear">
           <view class='live_list'>
-            <dl  wx:for="{{Textbroadcast}}" data-text-id="{{item.id}}">
+            <dl  wx:for="{{Textbroadcast}}" data-text-id="{{item.id}}" bindtap="toText">
                 <dt><image src="{{item.pic}}" alt="直播"></image></dt>
                 <dd><a href="javascript:void(0)"><span>直播老师：</span><span>{{item.def_name}}</span></a></dd>
             </dl>

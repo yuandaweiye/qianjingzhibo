@@ -5,28 +5,28 @@
     <form>
       <view class='input list'>
         <text>原密码</text>
-        <input type='text' placeholder='请输入原密码' bindinput='listenerold_pwd'/>
+        <input type='text' placeholder='请输入原密码' bindinput='listenerold_pwd' />
       </view>
       <view class='input list'>
         <text>新密码</text>
-        <input type='password' placeholder='请输入新密码' bindinput='listenernew_pwd'/>
+        <input type='password' placeholder='请输入新密码' bindinput='listenernew_pwd' />
       </view>
       <view class='input list'>
         <text>确认密码</text>
-        <input type='password' placeholder='再次输入新密码' bindinput='listenerconfirm_pwd'/>
+        <input type='password' placeholder='再次输入新密码' bindinput='listenerconfirm_pwd' />
       </view>
       <view class='list'>
         <text class='tisp'>密码长度8~16位，数字、字母、字符至少包含两种</text>
       </view>
       <view class='list'>
-          <button bindtap='listenerConfirm'>确认修改</button>
+        <button bindtap='listenerConfirm'>确认修改</button>
       </view>
       <view class='list'>
-          <button>取消</button>
+        <button>取消</button>
       </view>
-    
+
     </form>
-  
+
   </view>
 
 </view>

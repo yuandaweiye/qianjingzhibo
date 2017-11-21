@@ -30,12 +30,24 @@ Page({
           member_id: res.data,
           nick_name: that.data.nick_name
         }
-        console.log(data)
         postRequest("/api/edit_nick_name", data).
           then(res => {          
             if (res.data.error_code == 0){
-              wx.switchTab({
-                url: '../logs/logs',
+              wx.showToast({
+                title: '昵称修改成功',
+                icon: 'success',
+                duration: 1800,
+                success: function (res) {
+                  wx.switchTab({
+                    url: '../logs/logs',
+                  })
+                }
+              })
+            }else{
+              wx.showToast({
+                title: '昵称修改失败',
+                icon: 'loading',
+                duration: 1800
               })
             }
           }).

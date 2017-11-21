@@ -76,5 +76,12 @@ Page({
     wx.navigateTo({
       url: "../videoLive/videoLive?video_id=" + event.currentTarget.dataset.videoId,
     })
+  },
+  toText: function (event) {
+    console.log(event);
+    wx.navigateTo({
+      url: "../textLive/textLive?text_id=" + event.currentTarget.dataset.textId,
+    })
   }
+
 })

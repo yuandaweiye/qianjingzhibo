@@ -12,13 +12,12 @@
       </swiper>
   </view>
 
-
   <!--主题内容  -->
   <view class='main'>
     <view class="warp">
         <view class="warp_title ">
             直播大厅
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+            <a href="javascript:void(0)" bindtap="toOnlive"><span class="more fr">查看更多</span></a>
         </view>
         <view class="warp_content ">
             <view class='live_list'>
@@ -34,7 +33,7 @@
     <view class="warp">
         <view class="warp_title ">
             新闻资讯
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+            <a href="javascript:void(0)" bindtap="toNews"><span class="more fr">查看更多</span></a>
         </view>
         <view class="warp_content">
             <ul class="news_list">
@@ -47,7 +46,7 @@
     <view class="warp">
         <view class="warp_title ">
             行情中心
-            <a href="javascript:void(0)"><span class="more fr">查看更多</span></a>
+            <a href="javascript:void(0)" bindtap="toinfos"><span class="more fr">查看更多</span></a>
         </view>
         <view class="warp_content">
           

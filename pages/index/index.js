@@ -62,7 +62,7 @@ Page({
             newquotation.push(value)
           });
 
-          console.log(newquotation)
+          // console.log(newquotation)
           this.setData({ quotation: newquotation})
         }).catch(err => { console.log(err) });
 
@@ -77,7 +77,21 @@ Page({
     })
   },
 
-
+  toOnlive:function(){
+   wx.switchTab({
+     url: '../online/online',
+   })
+  },
+  toNews: function () {
+    wx.switchTab({
+      url: '../nowInfo/nowInfo',
+    })
+  },
+  toinfos: function () {
+    wx.switchTab({
+      url: '../infos/infos',
+    })
+  },
   getUserInfo: function(e) {
   }
 })
