@@ -2,36 +2,18 @@
 <view class='main'>
 <!--置顶观点  -->
   <view class="text_live">
-        <view class="text_live_top">
+       <view class="text_live_top" wx:for="{{isTop}}">
             <text>置顶观点</text>
-            <p>技术上看，昨日的旭日东升看涨形态，今日调整缩量，版块支撑在5680附近，建议分批低吸。控制好总仓位。今日调整缩量，版块支撑在5680附近，建议分批低吸。控制好总仓位。</p>
-        </view>
+            <p>{{item.content}}</p>
+        </view> 
         <view class="text_live_options comment">
             <ul>
-                <li class="options_top">
+                <li class="options_top" wx:for="{{masterMessage}}">
                     <dl>
-                        <dt><a href="javascript:void (0)"><image src="../../utils/images//live_header.png" alt=""></image></a></dt>
+                        <dt><a href="javascript:void (0)"><image src="{{item.pic}}" alt=""></image></a></dt>
                         <dd>
-                            <p class="clear info"><span class="name author">刘老师直播观点</span><span class="time">09:12</span></p>
-                            <p class="message">目前处于震荡整理的阶段，可关注上方9.5的压力位。目前处于震荡整理的阶段，目前处于震荡整理的阶段，目前处于震荡整理的阶段</p>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="options_top">
-                    <dl>
-                        <dt><a href="javascript:void (0)"><image src="../../utils/images//live_header.png" alt=""></image></a></dt>
-                        <dd>
-                            <p class="clear info"><span class="name author">刘老师直播观点</span><span class="time">09:12</span></p>
-                            <p class="message">目前处于震荡整理的阶段，可关注上方9.5的压力位。目前处于震荡整理的阶段，目前处于震荡整理的阶段，目前处于震荡整理的阶段</p>
-                        </dd>
-                    </dl>
-                </li>
-                <li class="options_top">
-                    <dl>
-                        <dt><a href="javascript:void (0)"><image src="../../utils/images//live_header.png" alt=""></image></a></dt>
-                        <dd>
-                            <p class="clear info"><span class="name author">刘老师直播观点</span><span class="time">09:12</span></p>
-                            <p class="message">目前处于震荡整理的阶段，可关注上方9.5的压力位。目前处于震荡整理的阶段，目前处于震荡整理的阶段，目前处于震荡整理的阶段</p>
+                            <p class="clear info"><span class="name author">{{item.def_name}}老师直播观点</span><span class="time">{{item.create_time}}</span></p>
+                            <p class="message">{{item.content}}</p>
                         </dd>
                     </dl>
                 </li>
@@ -40,45 +22,19 @@
     </view>
 
 <!--网友互动  -->
-<view class="test_live_hd">
         <view class="wyhd">
             <text>网友互动</text>
         </view>
+<view class="test_live_hd">
+
         <view class="comment">
                 <ul>
-                    <li class="yk">
+                    <li class="yk" wx:for="{{userMessages}}">
                         <dl>
-                            <dt><a href="javascript:void (0)"><image src="../../utils/images//yk_header.png" alt=""></image></a></dt>
+                            <dt><a href="javascript:void (0)"><image src="{{item.pic}}" alt=""></image></a></dt>
                             <dd>
-                                <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
-                                <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="yk">
-                        <dl>
-                            <dt><a href="javascript:void (0)"><image src="../../utils/images//yk_header.png" alt=""></image></a></dt>
-                            <dd>
-                                <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
-                                <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="author">
-                        <dl>
-                            <dt><a href="javascript:void (0)"><image src="../../utils/images//live_header.png" alt=""></image></a></dt>
-                            <dd>
-                                <p class="clear info"><span class="name author">刘老师</span><image src='../../utils/images/author_bg.png'></image><span class="time">09:12</span></p>
-                                <p class="message"><span>@游客12560257：</span>目前处于震荡整理的阶段，可关注上方9.5的压力位。</p>
-                            </dd>
-                        </dl>
-                    </li>
-                    <li class="yk">
-                        <dl>
-                            <dt><a href="javascript:void (0)"><image src="../../utils/images//yk_header.png" alt=""></image></a></dt>
-                            <dd>
-                                <p class="clear info"><span class="name author">游客12560257</span><span class="time">09:12</span></p>
-                                <p class="message">请问老师300254下面走势如何</p><a href="javascript:void (0)"><span class="reply">回复</span></a>
+                                <p class="clear info"><span class="name author">{{item.nick_name}}</span><span class="time">\r {{item.create_time}}</span></p>
+                                <p class="message">{{item.content}}</p><a href="javascript:void (0)"></a>
                             </dd>
                         </dl>
                     </li>
@@ -87,10 +43,11 @@
     </view>
 
 <!-- 评论输入框 -->
-      <view class="speak">
-        <textarea name="mess" id="mess" ></textarea>
-        <image class='brow' src='../../utils/images/brow.png'></image>
-        <button>发送</button>
-      </view>
+     
+      <form bindsubmit="formSubmit" class="speak">
+        <textarea  name="mess" id="mess"  value="{{userInp}}"></textarea >
+        <button formType="submit">发送</button>
+        </form>
+      
 
 </view>

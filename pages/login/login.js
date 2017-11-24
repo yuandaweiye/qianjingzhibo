@@ -43,7 +43,7 @@ Page({
               if (res.data.error_code == 0) {
                 wx.setStorage({
                   key: 'member_id',
-                  data: res.data.data.member_id,
+                  data: res.data.data,
                 })
                 wx.showToast({
                   title: '登陆成功',

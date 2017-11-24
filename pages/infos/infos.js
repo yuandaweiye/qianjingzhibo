@@ -2,83 +2,42 @@ import { postRequest } from '../../utils/util.js'
 Page({
   data: {
     /** 
-        * 页面配置 
+        * ҳ������ 
         */
     winWidth: 0,
     winHeight: 0,
-    // tab切换  
-    currentTab: 0,
+    currentTab:0,
     data_01: [],
     data_02: [],
     data_03: [],
     data_05: [],
+    ITime:null,
   },
   onLoad: function () {
     var that = this;
-
-    /** 
-     * 获取系统信息 
-     */
-
-    postRequest("/api/get_market",{type:1}).then(res=>{
-
-      var newquotation = [];
-      res.data.result.map((value) => {
-        value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : (value.change_percent * 100).toFixed(2);
-        value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : value.change;
-        newquotation.push(value)
-      });
-
-      that.setData({ data_01: newquotation });
-    })
-
-
-
-
-
+    this.getDatas();
     wx.getSystemInfo({
-
       success: function (res) {
         that.setData({
           winWidth: res.windowWidth,
           winHeight: res.windowHeight
         });
       }
-
     });
   },
   /** 
-     * 滑动切换tab 
+     * 滑动事件
      */
   bindChange: function (e) {
-
     var that = this;
     that.setData({ currentTab: e.detail.current });
-    postRequest("/api/get_market", { type: e.detail.current+1}).then(res=>{
-      console.log(res.data);
-      var newquotation = [];
-      res.data.result.map((value) => {
-        value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : (value.change_percent * 100).toFixed(2);
-        value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change :  value.change;
-        newquotation.push(value)
-      });
-      switch (e.detail.current){
-        case 0:
-          that.setData({ data_01: newquotation });break;
-        case 1:
-          that.setData({ data_02: newquotation }); break;
-        case 2:
-          that.setData({ data_03: newquotation }); break;
-        case 3:
-          that.setData({ data_04: newquotation }); break; 
+    // // 去获取一第一次
+    // this.getDatas(e.detail.current);
 
-      }
-    })
+    
 
-  },
-  /** 
-   * 点击tab切换 
-   */
+    
+   },
   swichNav: function (e) {
 
     var that = this;
@@ -86,9 +45,50 @@ Page({
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
-      that.setData({
-        currentTab: e.target.dataset.current
-      })
+      that.setData({currentTab: e.target.dataset.current})
     }
-  }
+  },
+
+  // 获取数据的方法
+  getDatas:function(){
+    var i=[1,2,3,4];
+    i.map((value)=>{
+      console.log(value);
+      postRequest("/api/get_market", { type: value }).then(res => {
+        var newquotation = [];
+        res.data.result.map((value) => {
+          value.change_percent = (value.change_percent * 100).toFixed(2) > 0 ? "+" + (value.change_percent * 100).toFixed(2) : (value.change_percent * 100).toFixed(2);
+          value.change = (value.change_percent * 100).toFixed(2) > 0 ? "+" + value.change : value.change;
+          newquotation.push(value)
+        });
+        switch (value) {
+          case 1:
+            this.setData({ data_01: newquotation }); break;
+          case 2:
+            this.setData({ data_02: newquotation }); break;
+          case 3:
+            this.setData({ data_03: newquotation }); break;
+          case 4:
+            this.setData({ data_04: newquotation }); break;
+
+        }
+      })
+
+
+    })
+
+  },
+
+  onReady:function(){
+    
+  },
+    
+ onShow: function () {
+  //  var ITime = null;
+   this.data.ITime = setInterval(() => { this.getDatas() }, 5000);
+  },
+ onHide: function () {
+   clearTimeout(this.data.ITime);
+   this.setData({ITime:null})
+ },
 })  

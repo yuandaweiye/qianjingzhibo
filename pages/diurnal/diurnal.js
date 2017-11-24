@@ -11,7 +11,8 @@ Page({
     char_gt: ">",
     journal:[],
     hidden:true,
-    pages:1
+    pages:1,
+    urls: "/api/get_articles"
 
   },
 
@@ -19,9 +20,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const urls = "/api/get_articles";
-    const journal_type = { type: 1, page: this.data.pages, per_page: 1 };
-    postRequest(urls, journal_type).then(res=>{
+    var journal_type = { type: 1, page: this.data.pages, per_page: 8 };
+    postRequest(this.data.urls, journal_type).then(res=>{
       console.log(res);
       this.setData({ journal: res.data.data});
     })
@@ -67,14 +67,22 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    this.data.pages++;
     this.setData({ hidden:false});
-    setTimeout(()=>{
-      this.setData({ hidden: true });
-    },2000)
-    
-
+    var journal_type = { type: 1, page: this.data.pages, per_page: 8 };
+    var journal = this.data.journal;
+    postRequest(this.data.urls, journal_type).then(res => {
+        journal =journal.concat(res.data.data);
+        this.setData({journal:journal,hidden: true });
+        if (res.data.data.length===0){
+          wx.showToast({
+             title: '已经没有更数据了',
+             icon: 'success',
+             duration: 1000
+          })
+        }
+    })
   },
-
   /**
    * 用户点击右上角分享
    */

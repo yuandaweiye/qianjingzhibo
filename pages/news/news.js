@@ -1,4 +1,6 @@
+
 // pages/news/news.js
+import { postRequest } from '../../utils/util.js'
 Page({
 
   /**
@@ -6,14 +8,22 @@ Page({
    */
   data: {
     char_lt: "<",
-    char_gt: ">"
+    char_gt: ">",
+    urls:"/api/get_articles",
+    allNews:[],
+    hidden:true,
+    pages:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var news_type = { type: 2, page: this.data.pages, per_page: 8 };
+    postRequest(this.data.urls, news_type).then(res => {
+      this.setData({ allNews: res.data.data });
+      console.log(this.data.allNews)
+    })
   },
 
   /**
@@ -55,6 +65,23 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+
+    this.data.pages++;
+    this.setData({ hidden: false });
+    var news_type = { type: 2, page: this.data.pages, per_page: 8 };
+    var allNews = this.data.allNews;
+
+    postRequest(this.data.urls, news_type).then(res => {
+      allNews = allNews.concat(res.data.data);
+      this.setData({ allNews: allNews, hidden: true });
+      if (res.data.data.length === 0) {
+        wx.showToast({
+          title: '已经没有更数据了',
+          icon: 'success',
+          duration: 1000
+        })
+      }
+    })
   
   },
 

@@ -28,5 +28,5 @@ Page({
     wx.navigateTo({
       url: "../newsContent/newsContent?article_id=" + event.currentTarget.dataset.newsId,
     })
-  },
+  }
 })  

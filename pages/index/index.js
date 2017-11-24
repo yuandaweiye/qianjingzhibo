@@ -71,7 +71,6 @@ Page({
 
 
   tapItem: function (event){
-    console.log(event.currentTarget.dataset.newsId);
     wx.navigateTo({
       url: "../newsContent/newsContent?article_id=" + event.currentTarget.dataset.newsId,
     })
@@ -93,5 +92,31 @@ Page({
     })
   },
   getUserInfo: function(e) {
+  },
+  toOline: function (event){
+    wx.getStorage({
+      key: 'member_id',
+      success: function (res) {
+        wx.navigateTo({
+          url: "../videoLive/videoLive?video_id=" + event.currentTarget.dataset.videoId,
+        })
+
+      },
+      fail: function (res) {
+        wx.showToast({
+          title: '您尚未登录',
+          icon: 'info',
+          duration: 1500,
+          success: function (res) {
+            setTimeout(() => {
+              wx.switchTab({
+                url: '../logs/logs',
+              })
+            }, 1500)
+
+          }
+        })
+      }
+    })
   }
 })

@@ -21,7 +21,7 @@
         </view>
         <view class="warp_content ">
             <view class='live_list'>
-              <dl wx:for="{{DirectseedingHall}}">
+              <dl wx:for="{{DirectseedingHall}}" data-video-id="{{item.id}}" bindtap="toOline">
                   <dt><a href="javascript:void(0)"><image src="{{item.pic}}" alt="直播"/></a></dt>
                   <dd><a href="javascript:void(0)"><span>"{{item.title}}"</span></a></dd>
               </dl>

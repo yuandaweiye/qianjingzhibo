@@ -1,3 +1,7 @@
+.text_live{
+  height: 500rpx;
+  overflow: auto;
+}
 .text_live .text_live_top {
   padding: 10rpx 40rpx;
   background: #FFF7D6;
@@ -13,11 +17,15 @@
   color: #3A3A3A;
   line-height: 36rpx;
 }
-.test_live_hd .wyhd {
+.test_live_hd{
+  height: 500rpx;
+  overflow: auto;
+}
+.wyhd {
   padding: 10rpx 40rpx;
   background: #FFF7D6;
 }
-.test_live_hd .wyhd text {
+ .wyhd text {
   font-size: 30rpx;
   height:40rpx;
   line-height: 40rpx;
@@ -119,7 +127,7 @@
   justify-content: space-between;
 }
 .speak textarea {
-  width: 420rpx;
+  width: 480rpx;
   height: 60rpx;
   line-height: 50rpx;
   overflow: hidden;
@@ -129,11 +137,7 @@
   -moz-border-radius: 30rpx;
   border-radius: 30rpx;
   background: #fff;
-}
-.speak .brow {
-  width: 66rpx;
-  height: 66rpx;
-  background-position: center center;
+  float: left
 }
 .speak button {
   width: 110rpx;
@@ -149,4 +153,6 @@
   -moz-border-radius: 10rpx;
   border-radius: 10rpx;
   cursor: pointer;
+  float: left;
+  margin-left: 50rpx;
 }
