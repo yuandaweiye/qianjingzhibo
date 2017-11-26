@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-      videoData:{},
-      userInfo:{},
-      userMessages:[],
-      room_id:""
+    videoData: {},
+    userInfo: {},
+    userMessages: [],
+    room_id: ""
   },
 
   /**
@@ -18,23 +18,19 @@ Page({
    */
   onLoad: function (options) {
     const video_id = options.video_id;
-    this.setData({ room_id:video_id})
-    postRequest("/api/get_studio_detail", { studio_id: video_id}).then(res=>{
-      this.setData({ videoData: res.data.data})
+    this.setData({ room_id: video_id })
+    postRequest("/api/get_studio_detail", { studio_id: video_id }).then(res => {
+      this.setData({ videoData: res.data.data })
       console.log(this.data.videoData);
-      var that=this;
+      var that = this;
       // 获取用户信息
       wx.getStorage({
         key: 'member_id',
         success: function (res) {
-          that.setData({ userInfo:res.data});
+          that.setData({ userInfo: res.data });
           console.log(that.data.userInfo);
         }
       })
-
-
-
-
     });
     postRequest("/api/get_comments", { studio_id: this.data.room_id }).then(res => {
       this.setData({
@@ -43,54 +39,18 @@ Page({
       console.log(this.data.userMessages)
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
-  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   },
 
   formSubmit: function (e) {

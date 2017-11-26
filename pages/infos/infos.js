@@ -1,9 +1,6 @@
 import { postRequest } from '../../utils/util.js'
 Page({
   data: {
-    /** 
-        * ҳ������ 
-        */
     winWidth: 0,
     winHeight: 0,
     currentTab:0,
@@ -33,22 +30,15 @@ Page({
     that.setData({ currentTab: e.detail.current });
     // // 去获取一第一次
     // this.getDatas(e.detail.current);
-
-    
-
-    
    },
   swichNav: function (e) {
-
     var that = this;
-
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
       that.setData({currentTab: e.target.dataset.current})
     }
   },
-
   // 获取数据的方法
   getDatas:function(){
     var i=[1,2,3,4];
